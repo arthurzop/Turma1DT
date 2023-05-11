@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somar Dois</title>
+    <title>Gerador de Senha</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Soma de Dois Números Inteiros</h1>
-    <label>Digite o primeiro número:</label>
-        <input type="number" id="num1"> 
-        <br>
-    <label>Digite o segundo número:</label> 
-        <input type="number" id="num2">
-        <br><br>
+    <header >
+        <h1> Gerador de Senhas</h1>
+    </header>
+    <main>
+        <div id="main">
+            <label>Digite o tamanho da senha:</label>
+            <input type="number" id="tamanho" min="1" max="12"> <br>
 
-    <button onclick="somar()">Somar</button>
-    <br>
-    
-    <div id="result">
+            <label>Digite a quantidade de senhas:</label>
+            <input type="number" id="quant" min="1" max="100">
+        </div>
 
-    </div>
+        <div id="check">
+            <label><input type="checkbox" id="special">Incluir caracteres especiais - !@#$%&</label> <br>
+            <label><input type="checkbox" id="number">Incluir Numerais - 0123456789</label> <br>
+            <label><input type="checkbox" id="upper">Incluir letras maiúsculas - ABCDEFGHIJKLMNOPQRSTUVWXYZ</label> <br>
+        </div>
 
-    <script src="soma.js"></script>
+        <div id="buttons">
+            <button onclick="gerarsenha()">Gerar Senha</button>
+            <button onclick="limpar()">Limpar</button> 
+        </div>
+
+        <div id="resultado">
+            <label>Resultado:</label> <br>
+            <textarea id="resposta" rows="8"></textarea>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
